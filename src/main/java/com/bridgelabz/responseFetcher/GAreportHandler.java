@@ -87,8 +87,6 @@ public class GAreportHandler {
 		dateRange.setStartDate(startDate);
 		dateRange.setEndDate(endDate);
 
-		System.out.println("Daterange: "+dateRange.size());
-		
 		// getting metricArray from model class
 		metricArrayList = gaReportInputModel.getmMetricArrayList();
 		// creating object of metric ArrayList
