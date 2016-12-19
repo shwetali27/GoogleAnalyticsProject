@@ -5,9 +5,10 @@ import java.util.List;
 public class GaReportInputModel {
 	private String mGaID;
 	private String mGaDiscription;
-	private List<String> mMetricArraList;
-	private List<String> mDimensionArraList;
-	private List<String> mDimensionFilterArraList;
+	private List<String> mMetricArrayList;
+	private List<String> mDimensionArrayList;
+	private List<String> mDimensionFilterArrayList;
+	
 	public String getmGaID() {
 		return mGaID;
 	}
@@ -20,23 +21,24 @@ public class GaReportInputModel {
 	public void setmGaDiscription(String mGaDiscription) {
 		this.mGaDiscription = mGaDiscription;
 	}
-	public List<String> getmMetricArraList() {
-		return mMetricArraList;
+	public List<String> getmMetricArrayList() {
+		return mMetricArrayList;
 	}
-	public void setmMetricArraList(List<String> mMetricArraList) {
-		this.mMetricArraList = mMetricArraList;
+	public void setmMetricArrayList(List<String> mMetricArrayList) {
+		this.mMetricArrayList = mMetricArrayList;
 	}
-	public List<String> getmDimensionArraList() {
-		return mDimensionArraList;
+	public List<String> getmDimensionArrayList() {
+		return mDimensionArrayList;
 	}
-	public void setmDimensionArraList(List<String> mDimensionArraList) {
-		this.mDimensionArraList = mDimensionArraList;
+	public void setmDimensionArrayList(List<String> mDimensionArrayList) {
+		this.mDimensionArrayList = mDimensionArrayList;
 	}
-	public List<String> getmDimensionFilterArraList() {
-		return mDimensionFilterArraList;
+	public List<String> getmDimensionFilterArrayList() {
+		return mDimensionFilterArrayList;
 	}
-	public void setmDimensionFilterArraList(List<String> mDimensionFilterArraList) {
-		this.mDimensionFilterArraList = mDimensionFilterArraList;
+	public void setmDimensionFilterArrayList(List<String> mDimensionFilterArrayList) {
+		this.mDimensionFilterArrayList = mDimensionFilterArrayList;
 	}
+	
 	
 }

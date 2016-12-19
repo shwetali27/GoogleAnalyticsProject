@@ -25,7 +25,7 @@ public class InputJsonReader {
 			// casting object into JSONObject
 			JSONObject jsonObject = (JSONObject) obj;//creating json object
 
-			// setting static values in secretFileModelObject
+			// setting common values in secretFileModelObject
 			SecretFileModel.setStartDate((String) jsonObject.get(ConstantData.startDate));
 
 			SecretFileModel.setEndDate((String) jsonObject.get(ConstantData.endDate));
@@ -38,8 +38,6 @@ public class InputJsonReader {
 
 			SecretFileModel.setVIEW_ID((String) jsonObject.get(ConstantData.VIEW_ID));
 
-			SecretFileModel.setCsvFilePath((String) jsonObject.get(ConstantData.CSVFilePath));
-
 			//System.out.println(SecretFileModel.getCsvFilePath());
 			
 			JSONArray gaReportInfoArray = (JSONArray) jsonObject.get(ConstantData.GAReportInfo);
@@ -50,18 +48,16 @@ public class InputJsonReader {
 
 				// initializing all value
 
-				List<String> metricArraList = new ArrayList<String>();
-				List<String> dimensionArraList = new ArrayList<String>();
-				List<String> dimensionFilterArraList = new ArrayList<String>();
+				List<String> metricArrayList = new ArrayList<String>();
+				List<String> dimensionArrayList = new ArrayList<String>();
+				List<String> dimensionFilterArrayList = new ArrayList<String>();
 
 				JSONObject gaReportInfoObject = (JSONObject) gaReportInfoArray.get(i);
 
 				// setting gaid into model class
-
 				gaReportInputModelObject.setmGaID((String) gaReportInfoObject.get(ConstantData.GAID));
 
-				// setting in model class
-
+				// setting GAdiscription in model class
 				gaReportInputModelObject.setmGaDiscription((String) gaReportInfoObject.get(ConstantData.GAdiscription));
 
 				// making metric array
@@ -69,29 +65,29 @@ public class InputJsonReader {
 				// reading the metric array
 				for (int k = 0; k < metricJSONArray.size(); k++) {
 					// adding into metric ArrayList
-					metricArraList.add((String) metricJSONArray.get(k));
+					metricArrayList.add((String) metricJSONArray.get(k));
 				}
 				// setting metric in model class
-				gaReportInputModelObject.setmMetricArraList(metricArraList);
+				gaReportInputModelObject.setmMetricArrayList(metricArrayList);
 
 				// making dimension JSONArray
 				JSONArray dimensionsJSONArray = (JSONArray) gaReportInfoObject.get(ConstantData.dimension);
 				// reading the dimension array
 				for (int j = 0; j < dimensionsJSONArray.size(); j++) {
-					dimensionArraList.add((String) dimensionsJSONArray.get(j));
+					dimensionArrayList.add((String) dimensionsJSONArray.get(j));
 				}
 				// setting dimension in model class
-				gaReportInputModelObject.setmDimensionArraList(dimensionArraList);
+				gaReportInputModelObject.setmDimensionArrayList(dimensionArrayList);
 
 				// Casting DimensionFilter into JSONArray
 				JSONArray dimensionFilterJSONArray = (JSONArray) gaReportInfoObject.get(ConstantData.dimensionfilter);
 
 				for (int l = 0; l < dimensionFilterJSONArray.size(); l++) {
 					// adding into DimensionFilter ArrayList
-					dimensionFilterArraList.add((String) dimensionFilterJSONArray.get(l));
+					dimensionFilterArrayList.add((String) dimensionFilterJSONArray.get(l));
 				}
 				// setting dimension filter in model class
-				gaReportInputModelObject.setmDimensionFilterArraList(dimensionFilterArraList);
+				gaReportInputModelObject.setmDimensionFilterArrayList(dimensionFilterArrayList);
 
 				GaReportInputModelArrayList.add(gaReportInputModelObject);
 			}

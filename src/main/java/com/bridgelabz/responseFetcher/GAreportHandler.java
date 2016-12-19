@@ -87,8 +87,10 @@ public class GAreportHandler {
 		dateRange.setStartDate(startDate);
 		dateRange.setEndDate(endDate);
 
+		System.out.println("Daterange: "+dateRange.size());
+		
 		// getting metricArray from model class
-		metricArrayList = gaReportInputModel.getmMetricArraList();
+		metricArrayList = gaReportInputModel.getmMetricArrayList();
 		// creating object of metric ArrayList
 		List<Metric> metriclist = new ArrayList<Metric>();
 
@@ -100,9 +102,9 @@ public class GAreportHandler {
 		}
 
 		// getting dimensionArray from model class
-		dimensionArrayList = gaReportInputModel.getmDimensionArraList();
+		dimensionArrayList = gaReportInputModel.getmDimensionArrayList();
 		Dimension dimens;
-		// Creating the Dimensions ArrayList.
+		// Creating the Dimensions ArrayList.                                                       
 		List<Dimension> dimensList = new ArrayList<Dimension>();
 
 		for (int i = 0; i < dimensionArrayList.size(); i++) {
@@ -113,7 +115,7 @@ public class GAreportHandler {
 		}
 
 		// getting dimenstionFilter from model class
-		dimensionFilterArrayList = gaReportInputModel.getmDimensionFilterArraList();
+		dimensionFilterArrayList = gaReportInputModel.getmDimensionFilterArrayList();
 		// creating object of DimensionFilter arrayList
 		List<DimensionFilter> dimensfilterList = new ArrayList<DimensionFilter>();
 

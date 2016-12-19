@@ -52,12 +52,14 @@ public class ResponseElementReader {
 				summaryReportModel.setmAndroidId(dimensionHashMapArrayList.get(i).get(ConstantData.dimension1));
 				summaryReportModel.setmDate(dimensionHashMapArrayList.get(i).get(ConstantData.date));
 			
+				//adding model into the list of models
 				summaryReportModels.add(summaryReportModel);
 			}
 		}
 	
 		if(sum==size){
 			System.out.println(summaryReportModels.size());
+			//creating summary report 
 			summaryReportCsv.createReport(summaryReportModels);
 		}
 	}		

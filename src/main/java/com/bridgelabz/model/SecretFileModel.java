@@ -7,7 +7,6 @@ public class SecretFileModel {
 	private static String KEY_FILE_LOCATION;
 	private static String SERVICE_ACCOUNT_EMAIL;
 	private static String VIEW_ID;
-	private static String CsvFilePath;
 	
 	//getters and setters
 	public static String getStartDate() {
@@ -46,12 +45,5 @@ public class SecretFileModel {
 	public static void setVIEW_ID(String vIEW_ID) {
 		VIEW_ID = vIEW_ID;
 	}
-	public static String getCsvFilePath() {
-		return CsvFilePath;
-	}
-	public static void setCsvFilePath(String csvFilePath) {
-		CsvFilePath = csvFilePath;
-	}
-	
 	
 }

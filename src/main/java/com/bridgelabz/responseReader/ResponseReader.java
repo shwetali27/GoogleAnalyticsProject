@@ -29,7 +29,7 @@ public class ResponseReader {
 			for (int j = 0; j < reportarray.size(); j++) {
 
 				// creating object of ArrayList of columnHeader and metricHeader
-				ArrayList<String> columnHeaderArrayList = new ArrayList<String>();
+				ArrayList<String> dimentionHeaderArrayList = new ArrayList<String>();
 				ArrayList<String> metricHeaderArrayList = new ArrayList<String>();
 
 				// arrayList of HashMap ArrayList of dimension
@@ -65,9 +65,9 @@ public class ResponseReader {
 
 				for (int k = 0; k < dimensionHeaderArrayInput.size(); k++) {
 
-					columnHeaderArrayList.add((String) dimensionHeaderArrayInput.get(k));
+					dimentionHeaderArrayList.add((String) dimensionHeaderArrayInput.get(k));
 				}
-				responseModelObject.setmColumnHeaderArrayList(columnHeaderArrayList);
+				responseModelObject.setmDimentionHeaderArrayList(dimentionHeaderArrayList);
 				
 				//System.out.println(responseModelObject.getmColumnHeaderArrayList());
 				/*-------------------------------------reading row data -----------------------------------------------------------------*/
@@ -126,7 +126,7 @@ public class ResponseReader {
 
 						for (int l = 0; l < dimensionsarray.size(); l++) {
 							// adding into ArrayList
-							dimensionHashMap.put(columnHeaderArrayList.get(l), (String) dimensionsarray.get(l));
+							dimensionHashMap.put(dimentionHeaderArrayList.get(l), (String) dimensionsarray.get(l));
 						}
 						// adding into dimension HashMap
 						dimensionHashMapArrayList.add(dimensionHashMap);

@@ -17,13 +17,13 @@ public class GoogleAnalytic {
 		//creating instants for classes
 		InputJsonReader inputJsonReader = new InputJsonReader();
 		ResponseModel responseModelObject = new ResponseModel();
-		GaReportResponseFetcher gaReportResponseFetcherObject = new GaReportResponseFetcher(); 
 		ResponseElementReader elementReader = new ResponseElementReader();
 		
 		
 		//reading the json file 
 		ArrayList<GaReportInputModel> gaReportInputInfoArrayList = inputJsonReader.readInputJsonFile(jsonfilepath);
 	
+		GaReportResponseFetcher gaReportResponseFetcherObject = new GaReportResponseFetcher(); 
 		//performing the operations on each task
 		for (int i = 0; i < gaReportInputInfoArrayList.size(); i++) {
 

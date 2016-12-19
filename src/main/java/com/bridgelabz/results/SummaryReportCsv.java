@@ -11,6 +11,7 @@ import com.csvreader.CsvWriter;
 
 public class SummaryReportCsv {
 	public void createReport(List<SummaryReportModel> summaryReportModels) {
+		
 		String appOpenFile = ConstantData.resultsFilepath + "SummaryReport.csv";
 		File file = new File(appOpenFile);
 		try {
@@ -25,7 +26,7 @@ public class SummaryReportCsv {
 			csvOutput.write("Inserted_Date");
 			csvOutput.endRecord();
 
-			// adding data for app open in csv
+			// adding data inside csv file
 			for (int i = 0; i < summaryReportModels.size(); i++) {
 				csvOutput.write(summaryReportModels.get(i).getmAndroidId());
 				csvOutput.write(summaryReportModels.get(i).getmGaDiscription());

@@ -4,17 +4,17 @@ import java.util.HashMap;
 import java.util.List;
 
 public class ResponseModel {
-	private List<String> mColumnHeaderArrayList;
+	private List<String> mDimentionHeaderArrayList;
 	private List<String> mMetricHeaderArrayList;
 	private List<HashMap<String, String>> dimensionHashMapArrayList;
 	private List<HashMap<String, String>> metricHashMapArrayList;
 	
 	//getters and setters
-	public List<String> getmColumnHeaderArrayList() {
-		return mColumnHeaderArrayList;
+	public List<String> getmDimentionHeaderArrayList() {
+		return mDimentionHeaderArrayList;
 	}
-	public void setmColumnHeaderArrayList(List<String> mColumnHeaderArrayList) {
-		this.mColumnHeaderArrayList = mColumnHeaderArrayList;
+	public void setmDimentionHeaderArrayList(List<String> mColumnHeaderArrayList) {
+		this.mDimentionHeaderArrayList = mColumnHeaderArrayList;
 	}
 	public List<String> getmMetricHeaderArrayList() {
 		return mMetricHeaderArrayList;
