@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 import com.bridgelabz.model.GaReportInputModel;
 import com.bridgelabz.model.ResponseModel;
 import com.bridgelabz.responseReader.ResponseReader;
@@ -17,6 +19,7 @@ public class GaReportResponseFetcher {
 	GAreportHandler reportHandler = GAreportHandler.getInstance();
 	AnalyticsReporting service;
 
+	Logger logger = Logger.getLogger(GaReportResponseFetcher.class);
 	// default constructor
 	public GaReportResponseFetcher() {
 		// calling initializeAnalyticsReporting method of
@@ -51,8 +54,9 @@ public class GaReportResponseFetcher {
 				i++;
 			}
 
-			System.out.println(response);
-
+			//System.out.println(response);
+			logger.debug("\n\n"+gaReportInputModel.getmGaDiscription());;
+			logger.debug(response);
 			// reading response and placing it to responseModelArrayList
 			responseModelObject = ResponseReader.responseReader(response.toString());
 		} catch (Exception e) {

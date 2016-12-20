@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.bridgelabz.constants.ConstantData;
 import com.bridgelabz.model.GaReportInputModel;
 import com.bridgelabz.model.ResponseModel;
@@ -11,6 +13,7 @@ import com.bridgelabz.model.SummaryReportModel;
 import com.bridgelabz.results.SummaryReportCsv;
 
 public class ResponseElementReader {
+	Logger logger = Logger.getLogger(ResponseElementReader.class);
 	SummaryReportCsv summaryReportCsv = new SummaryReportCsv();
 	List<SummaryReportModel> summaryReportModels = new ArrayList<SummaryReportModel>();
 	int sum = 0;
@@ -58,11 +61,12 @@ public class ResponseElementReader {
 			}
 		
 		}catch(Exception e){
-			System.out.println(e);
+			logger.debug(e);
+			//e.printStackTrace();
 		}
 		finally {
 			if(sum==size){
-				System.out.println(summaryReportModels.size());
+				//System.out.println(summaryReportModels.size());
 				//creating summary report 
 				summaryReportCsv.createReport(summaryReportModels);
 			}
