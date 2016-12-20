@@ -14,12 +14,13 @@ public class SummaryReportCsv {
 		
 		String appOpenFile = ConstantData.resultsFilepath + "SummaryReport.csv";
 		File file = new File(appOpenFile);
+		CsvWriter csvOutput = null;
 		try {
 			if (file.exists()) {
 				// System.out.println("inside delete");
 				file.delete();
 			}
-			CsvWriter csvOutput = new CsvWriter(new FileWriter(appOpenFile, true), ConstantData.csvDelimiter);
+			csvOutput = new CsvWriter(new FileWriter(appOpenFile, true), ConstantData.csvDelimiter);
 			// adding headings to csv file
 			csvOutput.write("Android ID");
 			csvOutput.write("Event_Name");
@@ -38,6 +39,9 @@ public class SummaryReportCsv {
 
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+		finally {
+			csvOutput.close();
 		}
 	}
 

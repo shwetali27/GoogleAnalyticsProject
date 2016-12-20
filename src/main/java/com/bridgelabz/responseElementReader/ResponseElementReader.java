@@ -15,6 +15,7 @@ public class ResponseElementReader {
 	List<SummaryReportModel> summaryReportModels = new ArrayList<SummaryReportModel>();
 	int sum = 0;
 
+	//method for reading the data and creating the report
 	public void responseElementReader(ResponseModel responseModelObject, GaReportInputModel gaReportInputModel,
 			int size) {
 		sum++;
