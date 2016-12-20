@@ -6,13 +6,14 @@ import java.io.IOException;
 import java.util.List;
 
 import com.bridgelabz.constants.ConstantData;
+import com.bridgelabz.model.SecretFileModel;
 import com.bridgelabz.model.SummaryReportModel;
 import com.csvreader.CsvWriter;
 
 public class SummaryReportCsv {
 	public void createReport(List<SummaryReportModel> summaryReportModels) {
 		
-		String appOpenFile = ConstantData.resultsFilepath + "SummaryReport.csv";
+		String appOpenFile = SecretFileModel.getCsvFilePath() + "SummaryReport.csv";
 		File file = new File(appOpenFile);
 		CsvWriter csvOutput = null;
 		try {

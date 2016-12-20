@@ -38,6 +38,8 @@ public class InputJsonReader {
 
 			SecretFileModel.setVIEW_ID((String) jsonObject.get(ConstantData.VIEW_ID));
 
+			SecretFileModel.setCsvFilePath((String) jsonObject.get(ConstantData.CSVFilePath));
+
 			//System.out.println(SecretFileModel.getCsvFilePath());
 			
 			JSONArray gaReportInfoArray = (JSONArray) jsonObject.get(ConstantData.GAReportInfo);
