@@ -5,7 +5,7 @@ public interface ConstantData {
 	static final String one = "1";
 	static final String two = "2";
 	static final String isNull = "null";
-	static final char csvDelimiter = '^';
+	static final char csvDelimiter = ',';
 	//file path for android id operations
 	static final String resultsFilepath = "/home/bridgeit/Music/ResultData/";
 	
