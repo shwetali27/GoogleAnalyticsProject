@@ -41,6 +41,8 @@ public interface ConstantData {
 	static final String dimension1 = "ga:dimension1";
 	static final String eventCategory = "ga:eventCategory";
 	static final String dimension8 = "ga:dimension8";
+	static final String totalEvents = "ga:totalEvents";
+	static final String sessions = "ga:sessions";
 	
 	//operators constants for dimention filters in input json
 	static final String operatorEXACT = "EXACT";

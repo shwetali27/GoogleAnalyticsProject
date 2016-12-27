@@ -26,6 +26,7 @@ public class SummaryReportCsv {
 			csvOutput.write("Android ID");
 			csvOutput.write("Event_Name");
 			csvOutput.write("Inserted_Date");
+			csvOutput.write("Values");
 			csvOutput.endRecord();
 
 			// adding data inside csv file
@@ -33,6 +34,7 @@ public class SummaryReportCsv {
 				csvOutput.write(summaryReportModels.get(i).getmAndroidId());
 				csvOutput.write(summaryReportModels.get(i).getmGaDiscription());
 				csvOutput.write(summaryReportModels.get(i).getmDate());
+				csvOutput.write(Integer.toString(summaryReportModels.get(i).getValues()));
 				csvOutput.endRecord();
 			}
 

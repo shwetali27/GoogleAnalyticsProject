@@ -3,6 +3,7 @@ package com.bridgelabz.model;
 public class SummaryReportModel {
 
 	private String mAndroidId,mDate,mGaDiscription;
+	private int values;
 
 	public String getmAndroidId() {
 		return mAndroidId;
@@ -27,5 +28,14 @@ public class SummaryReportModel {
 	public void setmGaDiscription(String mGaDiscription) {
 		this.mGaDiscription = mGaDiscription;
 	}
+
+	public int getValues() {
+		return values;
+	}
+
+	public void setValues(int values) {
+		this.values = values;
+	}
+	
 	
 }
