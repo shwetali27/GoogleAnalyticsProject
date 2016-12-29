@@ -21,6 +21,7 @@ public interface ConstantData {
 	static final String GAReportInfo = "GAReportInfo";
 	static final String GAID = "GAID";
 	static final String GAdiscription ="GAdiscription";
+	static final String metricValue="metricValue";
 	static final String metric = "metric";
 	static final String dimension = "dimension";
 	static final String dimensionfilter = "dimensionfilter";

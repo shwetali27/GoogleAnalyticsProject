@@ -55,7 +55,7 @@ public class GaReportResponseFetcher {
 			}
 
 			//System.out.println(response);
-			logger.debug("\n\n"+gaReportInputModel.getmGaDiscription());;
+			logger.debug("\n\n"+gaReportInputModel.getmGaID()+"."+gaReportInputModel.getmGaDiscription());;
 			logger.debug(response);
 			// reading response and placing it to responseModelArrayList
 			responseModelObject = ResponseReader.responseReader(response.toString());

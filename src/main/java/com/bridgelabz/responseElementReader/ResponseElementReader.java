@@ -35,8 +35,15 @@ public class ResponseElementReader {
 					summaryReportModel.setmGaDiscription(gaReportInputModel.getmGaDiscription());
 					summaryReportModel.setmAndroidId(dimensionHashMapArrayList.get(i).get(ConstantData.dimension1));
 					summaryReportModel.setmDate(dimensionHashMapArrayList.get(i).get(ConstantData.date));
-					summaryReportModel
-							.setValues(Integer.parseInt(metricHashmapList.get(i).get(ConstantData.totalEvents)));
+					// if metricValue is not provided then taking default value
+					// else taking value mentioned in json file
+					if (gaReportInputModel.getmMetricValue() == null) {
+						summaryReportModel
+								.setValues(Integer.parseInt(metricHashmapList.get(i).get(ConstantData.totalEvents)));
+					} else {
+						summaryReportModel.setValues(
+								Integer.parseInt(metricHashmapList.get(i).get(gaReportInputModel.getmMetricValue())));
+					}
 					summaryReportModels.add(summaryReportModel);
 				}
 
@@ -46,8 +53,15 @@ public class ResponseElementReader {
 					summaryReportModel.setmGaDiscription(gaReportInputModel.getmGaDiscription());
 					summaryReportModel.setmAndroidId(dimensionHashMapArrayList.get(i).get(ConstantData.dimension1));
 					summaryReportModel.setmDate(dimensionHashMapArrayList.get(i).get(ConstantData.date));
-					summaryReportModel
-							.setValues(Integer.parseInt(metricHashmapList.get(i).get(ConstantData.totalEvents)));
+					// if metricValue is not provided then taking default value
+					// else taking value mentioned in json file
+					if (gaReportInputModel.getmMetricValue() == null) {
+						summaryReportModel
+								.setValues(Integer.parseInt(metricHashmapList.get(i).get(ConstantData.totalEvents)));
+					} else {
+						summaryReportModel.setValues(
+								Integer.parseInt(metricHashmapList.get(i).get(gaReportInputModel.getmMetricValue())));
+					}
 					summaryReportModels.add(summaryReportModel);
 				}
 
@@ -58,12 +72,22 @@ public class ResponseElementReader {
 					summaryReportModel.setmGaDiscription(gaReportInputModel.getmGaDiscription());
 					summaryReportModel.setmAndroidId(dimensionHashMapArrayList.get(i).get(ConstantData.dimension1));
 					summaryReportModel.setmDate(dimensionHashMapArrayList.get(i).get(ConstantData.date));
-					if (responseModelObject.getMetricHashMapArrayList().get(i).containsKey("ga:totalEvents")) {
-						summaryReportModel
-								.setValues(Integer.parseInt(metricHashmapList.get(i).get(ConstantData.totalEvents)));
+					// if metricValue is not provided then taking default value
+					// else taking value mentioned in json file
+					if (gaReportInputModel.getmMetricValue() == null) {
+						// if metric list contains totalEvents the taking it as
+						// default value else taking sessions as default
+						if (responseModelObject.getMetricHashMapArrayList().get(i)
+								.containsKey(ConstantData.totalEvents)) {
+							summaryReportModel.setValues(
+									Integer.parseInt(metricHashmapList.get(i).get(ConstantData.totalEvents)));
+						} else {
+							summaryReportModel
+									.setValues(Integer.parseInt(metricHashmapList.get(i).get(ConstantData.sessions)));
+						}
 					} else {
-						summaryReportModel
-								.setValues(Integer.parseInt(metricHashmapList.get(i).get(ConstantData.sessions)));
+						summaryReportModel.setValues(
+								Integer.parseInt(metricHashmapList.get(i).get(gaReportInputModel.getmMetricValue())));
 					}
 					// adding model into the list of models
 					summaryReportModels.add(summaryReportModel);
