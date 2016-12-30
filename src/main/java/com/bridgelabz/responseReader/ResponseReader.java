@@ -24,20 +24,20 @@ public class ResponseReader {
 
 			// covering report array into JSONArray
 			JSONArray reportarray = (JSONArray) jsonObject.get(ConstantData.reports);
+			System.out.println(reportarray.size());
+			
+			// creating object of ArrayList of columnHeader and metricHeader
+			ArrayList<String> dimentionHeaderArrayList = new ArrayList<String>();
+			ArrayList<String> metricHeaderArrayList = new ArrayList<String>();
 
+			// arrayList of HashMap ArrayList of dimension
+			ArrayList<HashMap<String, String>> dimensionHashMapArrayList = new ArrayList<HashMap<String, String>>();
+
+			// arrayList of HashMap ArrayList of metrics
+			ArrayList<HashMap<String, String>> metricHashMapArrayList = new ArrayList<HashMap<String, String>>();
 			// reading report JSONArray
 			for (int j = 0; j < reportarray.size(); j++) {
-
-				// creating object of ArrayList of columnHeader and metricHeader
-				ArrayList<String> dimentionHeaderArrayList = new ArrayList<String>();
-				ArrayList<String> metricHeaderArrayList = new ArrayList<String>();
-
-				// arrayList of HashMap ArrayList of dimension
-				ArrayList<HashMap<String, String>> dimensionHashMapArrayList = new ArrayList<HashMap<String, String>>();
-
-				// arrayList of HashMap ArrayList of metrics
-				ArrayList<HashMap<String, String>> metricHashMapArrayList = new ArrayList<HashMap<String, String>>();
-
+				
 				// getting first object and converting into JSONObject
 				JSONObject obj3 = (JSONObject) reportarray.get(j);
 
@@ -58,7 +58,6 @@ public class ResponseReader {
 					// System.out.println(metricElemnt.get("name"));
 
 				}
-				responseModelObject.setmMetricHeaderArrayList(metricHeaderArrayList);
 				/*--------------------------------to read dimension name type from response------------------------------------*/
 
 				JSONArray dimensionHeaderArrayInput = (JSONArray) columnHeaderObject.get(ConstantData.dimensions);
@@ -67,7 +66,6 @@ public class ResponseReader {
 
 					dimentionHeaderArrayList.add((String) dimensionHeaderArrayInput.get(k));
 				}
-				responseModelObject.setmDimentionHeaderArrayList(dimentionHeaderArrayList);
 				
 				//System.out.println(responseModelObject.getmColumnHeaderArrayList());
 				/*-------------------------------------reading row data -----------------------------------------------------------------*/
@@ -115,9 +113,7 @@ public class ResponseReader {
 							
 
 						}
-						// setting metric value
-						responseModelObject.setMetricHashMapArrayList(metricHashMapArrayList);
-
+						
 						/*-----------------------------putting element into HashMap-------------------------------------*/
 
 						// casting into dimensions JSONArray
@@ -133,10 +129,16 @@ public class ResponseReader {
 
 					}
 
-					// setting value into response model class
-					responseModelObject.setDimensionHashMapArrayList(dimensionHashMapArrayList);
 				}
 			}
+			//setting the dimention header list
+			responseModelObject.setmDimentionHeaderArrayList(dimentionHeaderArrayList);
+			//setting metric header list
+			responseModelObject.setmMetricHeaderArrayList(metricHeaderArrayList);
+			// setting value into response model class
+			responseModelObject.setDimensionHashMapArrayList(dimensionHashMapArrayList);
+			// setting metric value
+			responseModelObject.setMetricHashMapArrayList(metricHashMapArrayList);
 
 		} catch (Exception e) {
 
