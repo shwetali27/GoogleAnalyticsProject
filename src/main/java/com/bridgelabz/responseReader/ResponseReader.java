@@ -24,7 +24,6 @@ public class ResponseReader {
 
 			// covering report array into JSONArray
 			JSONArray reportarray = (JSONArray) jsonObject.get(ConstantData.reports);
-			System.out.println(reportarray.size());
 			
 			// creating object of ArrayList of columnHeader and metricHeader
 			ArrayList<String> dimentionHeaderArrayList = new ArrayList<String>();

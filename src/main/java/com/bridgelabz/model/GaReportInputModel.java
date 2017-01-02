@@ -5,7 +5,6 @@ import java.util.List;
 public class GaReportInputModel {
 	private String mGaID;
 	private String mGaDiscription;
-	private String mMetricValue;
 	private List<String> mMetricArrayList;
 	private List<String> mDimensionArrayList;
 	private List<String> mDimensionFilterArrayList;
@@ -40,11 +39,4 @@ public class GaReportInputModel {
 	public void setmDimensionFilterArrayList(List<String> mDimensionFilterArrayList) {
 		this.mDimensionFilterArrayList = mDimensionFilterArrayList;
 	}
-	public String getmMetricValue() {
-		return mMetricValue;
-	}
-	public void setmMetricValue(String mMetricValue) {
-		this.mMetricValue = mMetricValue;
-	}
-	
 }

@@ -62,7 +62,6 @@ public class InputJsonReader {
 				// setting GAdiscription in model class
 				gaReportInputModelObject.setmGaDiscription((String) gaReportInfoObject.get(ConstantData.GAdiscription));
 
-				gaReportInputModelObject.setmMetricValue((String)gaReportInfoObject.get(ConstantData.metricValue));
 				// making metric array
 				JSONArray metricJSONArray = (JSONArray) gaReportInfoObject.get(ConstantData.metric);
 				// reading the metric array
